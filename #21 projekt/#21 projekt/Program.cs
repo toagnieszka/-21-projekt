@@ -1,70 +1,38 @@
-﻿int number = 4566;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
+﻿using _21_projekt;
 
-int nr0 = 0;
-int nr1 = 0;
-int nr2 = 0;
-int nr3 = 0;
-int nr4 = 0;
-int nr5 = 0;
-int nr6 = 0;
-int nr7 = 0;
-int nr8 = 0;
-int nr9 = 0;
+Employee employee1 = new Employee("Alicja", "Nowak", 36);
+Employee employee2 = new Employee("Kasia", "Kowalska", 25);
+Employee employee3 = new Employee("Kamil", "Wiśniewski", 57);
 
-foreach (char sign in letters)
+employee1.AddRate(3);
+employee1.AddRate(6);
+employee1.AddRate(2);
+employee1.AddRate(3);
+employee1.AddRate(9);
+employee2.AddRate(7);
+employee2.AddRate(3);
+employee2.AddRate(4);
+employee2.AddRate(1);
+employee2.AddRate(3);
+employee3.AddRate(1);
+employee3.AddRate(10);
+employee3.AddRate(2);
+employee3.AddRate(5);
+employee3.AddRate(3);
+
+var result1 = employee1.Result;
+var result2 = employee2.Result;
+var result3 = employee3.Result;
+
+if (result1 > result2 && result1 > result3)
 {
-    if (sign == '0')
-    {
-        nr0++;
-    }
-    else if (sign == '1')
-    {
-        nr1++;
-    }
-    else if (sign == '2')
-    {
-        nr2++;
-    }
-    else if (sign == '3')
-    {
-        nr3++;
-    }
-    else if (sign == '4')
-    {
-        nr4++;
-    }
-    else if (sign == '5')
-    {
-        nr5++;
-    }
-    else if (sign == '6')
-    {
-        nr6++;
-    }
-    else if (sign == '7')
-    {
-        nr7++;
-    }
-    else if (sign == '8')
-    {
-        nr8++;
-    }
-    else if (sign == '9')
-    {
-        nr9++;
-    }
+    Console.WriteLine($"Osoba z najwyższą liczbą ocen to: {employee1.Name} {employee1.Surname}, lat {employee1.Age}. Jej wynik to: {result1} punktów.");
 }
-
-Console.WriteLine("Wynik dla liczby: 4566");
-Console.WriteLine($"0 => {nr0}");
-Console.WriteLine($"1 => {nr1}");
-Console.WriteLine($"2 => {nr2}");
-Console.WriteLine($"3 => {nr3}");
-Console.WriteLine($"4 => {nr4}");
-Console.WriteLine($"5 => {nr5}");
-Console.WriteLine($"6 => {nr6}");
-Console.WriteLine($"7 => {nr7}");
-Console.WriteLine($"8 => {nr8}");
-Console.WriteLine($"9 => {nr9}");
+else if (result2 > result1 && result2 > result3)
+{
+    Console.WriteLine($"Osoba z najwyższą liczbą ocen to: {employee2.Name} {employee2.Surname}, lat {employee2.Age}. Jej wynik to: {result2} punktów.");
+}
+else if (result3 > result1 && result3 > result2)
+{
+    Console.WriteLine($"Osoba z najwyższą liczbą ocen to: {employee3.Name} {employee3.Surname}, lat {employee3.Age}. Jej wynik to: {result3} punktów.");
+}
