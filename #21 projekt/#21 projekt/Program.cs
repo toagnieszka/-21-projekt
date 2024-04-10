@@ -9,11 +9,13 @@ employee1.AddRate(6);
 employee1.AddRate(2);
 employee1.AddRate(3);
 employee1.AddRate(9);
+
 employee2.AddRate(7);
 employee2.AddRate(3);
 employee2.AddRate(4);
 employee2.AddRate(1);
 employee2.AddRate(3);
+
 employee3.AddRate(1);
 employee3.AddRate(10);
 employee3.AddRate(2);
