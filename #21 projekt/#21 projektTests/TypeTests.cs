@@ -8,8 +8,8 @@ namespace _21_projektTests
         public void WhenGetEmployeeThenReturnDifferentObjects()
         {
             //arrange
-            var employee1 = GetEmployee("Ala", "Nowak", 3);
-            var employee2 = GetEmployee("Kamila", "Kowak", 6);
+            var employee1 = GetEmployee("Ala", "Nowak");
+            var employee2 = GetEmployee("Kamila", "Kowak");
 
             //act
 
@@ -18,9 +18,9 @@ namespace _21_projektTests
             Assert.AreNotEqual(employee1, employee2);
         }
 
-        private Employee GetEmployee(string name, string surname, int age)
+        private Employee GetEmployee(string name, string surname)
         {
-            return new Employee(name, surname, age);
+            return new Employee(name, surname);
         }
 
         [Test]

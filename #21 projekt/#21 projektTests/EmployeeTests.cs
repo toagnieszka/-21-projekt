@@ -6,51 +6,39 @@ namespace _21_projektTests
     {
 
         [Test]
-        public void WhenEmployee1CollectRates_ThenCorrectResult()
+        public void WhenEmployee1CollectGrades_ThenCorrectStatistics()
         {
             //arrange
-            Employee employee = new Employee("Magda", "Kowalska", 21);
-            employee.AddRate(2);
-            employee.AddRate(8);
-            employee.AddRate(8);
+            Employee employee1 = new Employee("Magda", "Kowalska");
+            employee1.AddGrade(2);
+            employee1.AddGrade(8);
+            employee1.AddGrade(8);
 
             //act
-            var result = employee.Result;
+            var statistics = employee1.GetStatistics();
 
             //assert
-            Assert.AreEqual(18, result);
+            Assert.AreEqual(8, statistics.Max);
+            Assert.AreEqual(2, statistics.Min);
+            Assert.AreEqual(6, statistics.Average);
         }
 
         [Test]
-        public void WhenEmployee2CollectRates_ThenCorrectResult()
+        public void WhenEmployee2CollectGrades_ThenCorrectStatistics()
         {
             //arrange
-            Employee employee = new Employee("Janka", "Kowalczyk", 63);
-            employee.AddRate(10);
-            employee.AddRate(-7);
-            employee.AddRate(1);
+            Employee employee2 = new Employee("Ala", "Nowak");
+            employee2.AddGrade(-5);
+            employee2.AddGrade(5);
+            employee2.AddGrade(9);
 
             //act
-            var result = employee.Result;
+            var statistics = employee2.GetStatistics();
 
             //assert
-            Assert.AreEqual(4, result);
-        }
-
-        [Test]
-        public void WhenEmployee3CollectRates_ThenCorrectResult()
-        {
-            //arrange
-            Employee employee = new Employee("Hania", "Makowa", 32);
-            employee.AddRate(-9);
-            employee.AddRate(-1);
-            employee.AddRate(5);
-
-            //act
-            var result = employee.Result;
-
-            //assert
-            Assert.AreEqual(-5, result);
+            Assert.AreEqual(9, statistics.Max);
+            Assert.AreEqual(-5, statistics.Min);
+            Assert.AreEqual(3, statistics.Average);
         }
     }
 }
