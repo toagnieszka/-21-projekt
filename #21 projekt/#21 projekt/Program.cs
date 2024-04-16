@@ -13,10 +13,9 @@ employee2.AddGrade(3);
 employee3.AddGrade(1);
 employee3.AddGrade(10);
 
-var statistics1 = employee1.GetStatisticsWithFor();
-var statistics2 = employee2.GetStatisticsWithDoWhile();
-var statistics3 = employee3.GetStatisticsWithWhile();
-var statistics4 = employee1.GetStatisticsWithForEach();
+var statistics1 = employee1.GetStatistics();
+var statistics2 = employee2.GetStatistics();
+var statistics3 = employee3.GetStatistics();
 
 Console.WriteLine($"Min: {statistics1.Min:N2}");
 Console.WriteLine($"Max: {statistics1.Max:N2}");
