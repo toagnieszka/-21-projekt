@@ -11,7 +11,7 @@ employee2.AddGrade(7);
 employee2.AddGrade(3);
 
 employee3.AddGrade(1);
-employee3.AddGrade(10);
+employee3.AddGrade(101);
 
 var statistics1 = employee1.GetStatistics();
 var statistics2 = employee2.GetStatistics();
