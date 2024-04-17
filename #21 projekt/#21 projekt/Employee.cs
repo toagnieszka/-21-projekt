@@ -25,7 +25,7 @@ namespace _21_projekt
             }
             else
             {
-                Console.WriteLine("Niepoprawna wartość oceny");
+                throw new Exception("Niepoprawna wartość oceny");
             }
         }
 
@@ -39,7 +39,7 @@ namespace _21_projekt
             }
             else
             {
-                Console.WriteLine("Nie jest możliwe przekonwertowanie wartości do float'a");
+                throw new Exception("Nie jest możliwe przekonwertowanie wartości do float'a");
             }
         }
 
@@ -53,7 +53,7 @@ namespace _21_projekt
             }
             else
             {
-                Console.WriteLine("Nie jest możliwe przekonwertowanie wartości do float'a");
+                throw new Exception("Nie jest możliwe przekonwertowanie wartości do float'a");
             }
         }
 
@@ -67,7 +67,7 @@ namespace _21_projekt
             }
             else
             {
-                Console.WriteLine("Nie jest możliwe przekonwertowanie wartości do float'a");
+                throw new Exception("Nie jest możliwe przekonwertowanie wartości do float'a");
             }
         }
 
@@ -79,7 +79,7 @@ namespace _21_projekt
             }
             else
             {
-                Console.WriteLine("Nie jest możliwe przekonwertowanie wartości do float'a");
+                throw new Exception("Nie jest możliwe przekonwertowanie wartości do float'a");
             }
         }
 
@@ -108,8 +108,7 @@ namespace _21_projekt
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Zła litera");
-                    break;
+                    throw new Exception("Wrong letter");
             }
         }
 
