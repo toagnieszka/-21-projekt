@@ -1,22 +1,28 @@
 ﻿using _21_projekt;
 
+Console.WriteLine(" Witaj w aplikacji XYZ do oceny pracownika");
+Console.WriteLine("===========================================");
+Console.WriteLine();
+
 Employee employee1 = new Employee("Alicja", "Nowak");
-Employee employee2 = new Employee("Kasia", "Kowalska");
-Employee employee3 = new Employee("Kamil", "Wiśniewski");
 
-employee1.AddGrade(3);
-employee1.AddGrade(6);
-
-employee2.AddGrade(7);
-employee2.AddGrade(3);
-
-employee3.AddGrade(1);
-employee3.AddGrade(10);
+while (true)
+{
+    Console.WriteLine(" Podaj nową ocenę dla pracownika:");
+    var input = Console.ReadLine();
+    if (input == "q")
+    {
+        break; 
+    }
+    employee1.AddGrade(input);
+}
 
 var statistics1 = employee1.GetStatistics();
-var statistics2 = employee2.GetStatistics();
-var statistics3 = employee3.GetStatistics();
 
-Console.WriteLine($"Min: {statistics1.Min:N2}");
-Console.WriteLine($"Max: {statistics1.Max:N2}");
-Console.WriteLine($"Average: {statistics1.Average:N2}");
+Console.WriteLine();
+Console.WriteLine(" Oto statystki dla Twojego pracownika:");
+Console.WriteLine("======================================");
+Console.WriteLine($"Wartość minimalna: {statistics1.Min:N2}");
+Console.WriteLine($"Wartość maksymalna: {statistics1.Max:N2}");
+Console.WriteLine($"Wartość średnia: {statistics1.Average:N2}");
+Console.WriteLine($"Wartość średnia literowa: {statistics1.AverageLetter:N2}");
