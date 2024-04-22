@@ -1,21 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace _21_projekt
+﻿namespace _21_projekt
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
+        public Employee(string name, string surname, string gender)
+            : base(name, surname, gender)
         {
-            this.Name = name;
-            this.Surname = surname;
+
         }
-
-        public string Name { get; private set; }
-
-        public string Surname { get; private set; }
-
 
         public void AddGrade(float grade)
         {
