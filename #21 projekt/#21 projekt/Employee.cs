@@ -19,43 +19,21 @@
 
         public void AddGrade(float grade)
         {
-            if (grade >= 0 && grade <= 100)
-            {
-                this.grades.Add(grade);
-            }
-            else
-            {
-                throw new Exception("Niepoprawna wartość oceny");
-            }
-        }
-
-        public void AddGrade(double grade)
-        {
-            var gradeInString = grade.ToString();
-
-            if (float.TryParse(gradeInString, out float result))
-            {
-                this.AddGrade(result);
-            }
-            else
-            {
-                throw new Exception("Nie jest możliwe przekonwertowanie wartości do float'a");
-            }
+            this.AddGrade(grade);
         }
 
         public void AddGrade(int grade)
         {
-            var gradeInInt = grade.ToString();
-
-            if (float.TryParse(gradeInInt, out float result))
-            {
-                this.AddGrade(result);
-            }
-            else
-            {
-                throw new Exception("Nie jest możliwe przekonwertowanie wartości do float'a");
-            }
+            float floatValue = (float)grade;
+            this.AddGrade(floatValue);
         }
+
+        public void AddGrade(double grade)
+        {
+            float floatValue = (float)grade;
+            this.AddGrade(floatValue);
+        }
+    
 
         public void AddGrade(string grade)
         {
