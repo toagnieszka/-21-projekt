@@ -1,14 +1,21 @@
 ﻿namespace _21_projekt
 {
-    public class Employee : Person
+    public class Employee : IEmployee
     {
         private List<float> grades = new List<float>();
 
         public Employee(string name, string surname, string gender)
-            : base(name, surname, gender)
         {
-
+            this.Name = name;
+            this.Surname = surname;
+            this.Gender = gender;
         }
+
+        public string Name { get; private set; }
+
+        public string Surname { get; private set; }
+
+        public string Gender { get; private set; }
 
         public void AddGrade(float grade)
         {
@@ -50,20 +57,6 @@
             }
         }
 
-        public void AddGrade(short grade)
-        {
-            var gradeInShort = grade.ToString();
-
-            if (float.TryParse(gradeInShort, out float result))
-            {
-                this.AddGrade(result);
-            }
-            else
-            {
-                throw new Exception("Nie jest możliwe przekonwertowanie wartości do float'a");
-            }
-        }
-
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
@@ -78,6 +71,7 @@
 
         public void AddGrade(char grade)
         {
+
             switch (grade)
             {
                 case 'A':
