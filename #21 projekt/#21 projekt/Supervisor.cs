@@ -115,7 +115,15 @@
                         this.AddGrade(5);
                         break;
                     default:
-                        throw new Exception("Wrong Number");
+                        if (float.TryParse(grade, out float result))
+                        {
+                            this.AddGrade(result);
+                            break;
+                        }
+                        else
+                        {
+                            throw new Exception("String is not float");
+                        }
                 }
             }
         }
