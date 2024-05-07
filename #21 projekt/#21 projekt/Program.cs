@@ -1,19 +1,18 @@
 ﻿using _21_projekt;
 
-/*Console.WriteLine(" Witaj w aplikacji XYZ do oceny pracownika");
+Console.WriteLine(" Witaj w aplikacji XYZ do oceny pracownika");
 Console.WriteLine("===========================================");
-Console.WriteLine();*/
+Console.WriteLine();
 
-EmployeeInFile employee = new EmployeeInFile("Alicja", "Nowak", "kobieta");
+EmployeeInMemory employee1 = new EmployeeInMemory("Alicja", "Nowak", "kobieta");
+employee1.GradeAdded += EmployeeGradeAdded;
 
-employee.AddGrade(10);
-employee.AddGrade(0.5f);
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Ocenę dodano");
+}
 
-
-
-
-
-/*while (true)
+while (true)
 {
     Console.WriteLine(" Podaj nową ocenę dla pracownika:");
     var input = Console.ReadLine();
@@ -40,4 +39,4 @@ Console.WriteLine("======================================");
 Console.WriteLine($"Wartość minimalna: {statistics1.Min:N2}");
 Console.WriteLine($"Wartość maksymalna: {statistics1.Max:N2}");
 Console.WriteLine($"Wartość średnia: {statistics1.Average:N2}");
-Console.WriteLine($"Wartość średnia literowa: {statistics1.AverageLetter:N2}");*/
+Console.WriteLine($"Wartość średnia literowa: {statistics1.AverageLetter:N2}");

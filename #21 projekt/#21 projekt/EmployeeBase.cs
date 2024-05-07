@@ -2,6 +2,10 @@
 {
     public abstract class EmployeeBase : IEmployee
     {
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+        public abstract event GradeAddedDelegate GradeAdded;
+
         public EmployeeBase (string name, string surname, string gender)
         {
             this.Name = name;
@@ -13,17 +17,7 @@
         public string Surname { get; private set; }
         public string Gender { get; private set;}
 
-        public virtual void AddGrade(float grade)
-        {
-            if (grade >= 0 && grade <= 100)
-            {
-                this.AddGrade(grade);
-            }
-            else
-            {
-                throw new Exception("Wrong grade value");
-            }
-        }
+        public abstract void AddGrade(float grade);
 
         public virtual void AddGrade(int grade)
         {

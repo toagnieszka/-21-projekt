@@ -2,6 +2,8 @@
 {
     public class EmployeeInFile : EmployeeBase
     {
+        public override event GradeAddedDelegate GradeAdded;
+
         public EmployeeInFile(string name, string surname, string gender)
             : base(name, surname, gender)
         {
@@ -15,6 +17,11 @@
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(grade);
+                }
+
+                if (GradeAdded != null) 
+                {
+                    GradeAdded(this, new EventArgs());
                 }
             }
             else
