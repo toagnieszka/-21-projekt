@@ -9,7 +9,7 @@ namespace _21_projektTests
         public void WhenEmployee1CollectGrades_ThenCorrectMaxValue()
         {
             //arrange
-            Employee employee1 = new Employee("Magda", "Kowalska", "k");
+            EmployeeInMemory employee1 = new EmployeeInMemory("Magda", "Kowalska", "k");
             employee1.AddGrade(2);
             employee1.AddGrade(8);
             employee1.AddGrade(8);
@@ -25,7 +25,7 @@ namespace _21_projektTests
         public void WhenEmployeeCollectGrades_ThenCorrectMinValue()
         {
             //arrange
-            Employee employee = new Employee("Ala", "Nowak", "k");
+            EmployeeInMemory employee = new EmployeeInMemory("Ala", "Nowak", "k");
             employee.AddGrade(50);
             employee.AddGrade(5);
             employee.AddGrade(9);
@@ -41,7 +41,7 @@ namespace _21_projektTests
         public void WhenEmployeeCollectGrades_ThenCorrectAverageValue()
         {
             //arrange
-            Employee employee = new Employee("Ala", "Nowak", "k");
+            EmployeeInMemory employee = new EmployeeInMemory("Ala", "Nowak", "k");
             employee.AddGrade(50);
             employee.AddGrade(30);
             employee.AddGrade(10);
@@ -57,7 +57,7 @@ namespace _21_projektTests
         public void WhenEmployeeCollectGrades_ThenCorrectAverageLetterValue()
         {
             //arrange
-            Employee employee = new Employee("Ala", "Nowak", "k");
+            EmployeeInMemory employee = new EmployeeInMemory("Ala", "Nowak", "k");
             employee.AddGrade(100);
             employee.AddGrade(90);
             employee.AddGrade(80);

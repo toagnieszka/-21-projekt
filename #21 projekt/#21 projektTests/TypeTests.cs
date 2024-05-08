@@ -5,25 +5,6 @@ namespace _21_projektTests
     public class TypeTests
     {
         [Test]
-        public void WhenGetEmployeeThenReturnDifferentObjects()
-        {
-            //arrange
-            var employee1 = GetEmployee("Ala", "Nowak");
-            var employee2 = GetEmployee("Kamila", "Kowak");
-
-            //act
-
-
-            //assert
-            Assert.AreNotEqual(employee1, employee2);
-        }
-
-        private Employee GetEmployee(string name, string surname)
-        {
-            return new Employee(name, surname);
-        }
-
-        [Test]
         public void WhenDifferentAgeThenReturnSameResult()
         {
             //arrange
