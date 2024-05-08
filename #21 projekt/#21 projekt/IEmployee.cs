@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+﻿using static _21_projekt.EmployeeBase;
 
 namespace _21_projekt
 {
@@ -9,6 +9,8 @@ namespace _21_projekt
         string Surname { get; }
 
         string Gender { get; }
+
+        event GradeAddedDelegate GradeAdded;
 
         Statistics GetStatistics();
 
